@@ -23,6 +23,8 @@ def read_wfdb(input_file, duration=None, metadata_file=None, verbose=True):
     header = wfdb.rdheader(record_name)
     fs = header.fs
     sig_names = [ sig_name.split()[0] for sig_name in header.sig_name ]
+    df_columns = [ str(f"Lead_{i}") for i in range(1, len(header.sig_name)+1) ]
+
     num_samples = header.sig_len
     num_leads = header.n_sig
 
@@ -55,7 +57,7 @@ def read_wfdb(input_file, duration=None, metadata_file=None, verbose=True):
 
     # Create dataframe
     timestamps = [base_epoch_ns + i * interval_ns for i in range(len(signals))]
-    df = pd.DataFrame(signals, columns=sig_names)
+    df = pd.DataFrame(signals, columns=df_columns)
     df.insert(0, "time", timestamps)
 
     # Metadata

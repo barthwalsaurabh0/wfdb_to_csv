@@ -64,6 +64,10 @@ python -m hea_to_csv <input_file> [-o <output_file>] [-m <metadata_file>] [-q]
 
 ## Change Log
 
+### v0.1.1
+- Change csv column name to Lead_{i}.csv 
+
+
 ### v0.1.0
 - Initial release  
 - Converts HEA/DAT files to CSV with timestamp  
