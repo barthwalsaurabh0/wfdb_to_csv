@@ -1,4 +1,4 @@
-# HEA to CSV Converter
+# WFDB to CSV Converter
 
 A Python package and CLI to convert WFDB ECG recordings (.HEA/.DAT) to CSV format with timestamped entries using UNIX epoch nanoseconds.
 
@@ -25,7 +25,7 @@ For complete details, refer to [WFDB Format Documentation](https://physionet.org
 Install from PyPI:
 
 ```bash
-pip install hea_to_csv
+pip install wfdb_to_csv
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ pip install hea_to_csv
 ### As a Python Module
 
 ```python
-from hea_to_csv import wfdb_to_csv
+import wfdb_to_csv
 
 # Basic usage
 wfdb_to_csv("recording.hea")  # Save as recording.csv
@@ -50,7 +50,7 @@ wfdb_to_csv(
 ### CLI Usage
 
 ```bash
-python -m hea_to_csv <input_file> [-o <output_file>] [-m <metadata_file>] [-q]
+python -m wfdb_to_csv <input_file> [-o <output_file>] [-m <metadata_file>] [-q]
 ```
 
 ## CLI Parameters
